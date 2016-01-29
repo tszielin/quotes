@@ -34,7 +34,7 @@ abstract public class QuotesTest<T extends Quote> extends BaseTest {
     public void testFindByCurrency() {
         Assert.assertNotNull(repository);
         T stored = store();
-        List<T> saved = repository.find(stored.getCurrency().getCode(), new Sort(Direction.DESC));
+        List<T> saved = repository.find(stored.getCurrency().getCode(), new Sort(Direction.DESC, "publicated"));
         Assert.assertNotNull(saved);
         Assert.assertTrue(!saved.isEmpty());
         Assert.assertTrue(saved.size() == 1);
@@ -50,7 +50,7 @@ abstract public class QuotesTest<T extends Quote> extends BaseTest {
     public void testExchangesByPublicated() {
         Assert.assertNotNull(repository);
         T stored = store();
-        List<T> saved = repository.find(stored.getPublicated(), new Sort(Direction.DESC));
+        List<T> saved = repository.find(stored.getPublicated(), new Sort(Direction.DESC, "publicated"));
         Assert.assertNotNull(saved);
         Assert.assertTrue(!saved.isEmpty());
         Assert.assertTrue(saved.size() == 1);
