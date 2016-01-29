@@ -35,10 +35,10 @@
 		<div id="sses1">
 			<ul>
 				<c:forEach var="provider" items="${providers}">
-					<li><a href="/quotes/${provider.name().toLowerCase()}">${provider.name()}
+					<li><a href="${pageContext.request.contextPath}/${provider.name().toLowerCase()}">${provider.name()}
 							quotes</a></li>
 				</c:forEach>
-				<li><a href="/quotes/login?logout">Logout</a></li>
+				<li><a href="${pageContext.request.contextPath}/login?logout">Logout</a></li>
 			</ul>
 		</div>
 	</div>
@@ -86,9 +86,9 @@
 				<c:forEach var="quote" items="${quotes}">
 					<fmt:formatDate pattern="yyyy-MM-dd" value="${quote.publicated}" var="strDate"/>
 					<tr>
-						<td align="center"><a href="/quotes/nbp/${quote.currency.code}">${quote.currency.code}</a></td>
+						<td align="center"><a href="${pageContext.request.contextPath}/nbp/${quote.currency.code}">${quote.currency.code}</a></td>
 						<td align="left">${quote.currency.description}</td>
-						<td align="center"><a href="/quotes/nbp/on/${strDate}">${strDate}</a></td>
+						<td align="center"><a href="${pageContext.request.contextPath}/nbp/on/${strDate}">${strDate}</a></td>
 						<td align="center">${quote.tableId}</td>
 						<td align="right"><fmt:formatNumber type="number"
 								pattern="#,##0" value="${quote.scalar}" /></td>

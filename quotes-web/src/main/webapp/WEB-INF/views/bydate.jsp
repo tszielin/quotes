@@ -35,10 +35,10 @@
 		<div id="sses1">
 			<ul>
 				<c:forEach var="provider" items="${providers}">
-					<li><a href="/quotes/${provider.name().toLowerCase()}">${provider.name()}
+					<li><a href="${pageContext.request.contextPath}/${provider.name().toLowerCase()}">${provider.name()}
 							quotes</a></li>
 				</c:forEach>
-				<li><a href="/quotes/login?logout">Logout</a></li>
+				<li><a href="${pageContext.request.contextPath}/login?logout">Logout</a></li>
 			</ul>
 		</div>
 	</div>
@@ -109,13 +109,13 @@
 					<tr>
 						<c:choose>
 							<c:when test="">"${objName=='NBPQuote'}>
-								<td align="center"><a href="/quotes/nbp/${quote.currency.code}">${quote.currency.code}</a></td>
+								<td align="center"><a href="${pageContext.request.contextPath}/nbp/${quote.currency.code}">${quote.currency.code}</a></td>
 							</c:when>
 							<c:when test="">"${objName=='ECBQuote'}>
-								<td align="center"><a href="/quotes/ecb/${quote.currency.code}">${quote.currency.code}</a></td>
+								<td align="center"><a href="${pageContext.request.contextPath}/ecb/${quote.currency.code}">${quote.currency.code}</a></td>
 							</c:when>
 							<c:otherwise>
-								<td align="center"><a href="/quotes/fed/${quote.currency.code}">${quote.currency.code}</a></td>
+								<td align="center"><a href="${pageContext.request.contextPath}/fed/${quote.currency.code}">${quote.currency.code}</a></td>
 							</c:otherwise>
 						</c:choose>
 						<c:choose>

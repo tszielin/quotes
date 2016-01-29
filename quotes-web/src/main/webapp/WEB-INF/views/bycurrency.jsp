@@ -38,10 +38,10 @@
 		<div id="sses1">
 			<ul>
 				<c:forEach var="provider" items="${providers}">
-					<li><a href="/quotes/${provider.name().toLowerCase()}">${provider.name()}
+					<li><a href="${pageContext.request.contextPath}/${provider.name().toLowerCase()}">${provider.name()}
 							quotes</a></li>
 				</c:forEach>
-				<li><a href="/quotes/login?logout">Logout</a></li>
+				<li><a href="${pageContext.request.contextPath}/login?logout">Logout</a></li>
 			</ul>
 		</div>
 	</div>
@@ -125,7 +125,7 @@
 					<tr>
 						<c:choose>
 							<c:when test="${objName=='NBPQuote'}">
-								<td align="center"><a href="/quotes/nbp/on/${strDate}">${strDate}</a></td>
+								<td align="center"><a href="${pageContext.request.contextPath}/nbp/on/${strDate}">${strDate}</a></td>
 								<td align="center">${quote.tableId}</td>
 								<td align="right"><fmt:formatNumber type="number"
 										pattern="#,##0" value="${quote.scalar}" /></td>
@@ -135,10 +135,10 @@
 							<c:otherwise>
 								<c:choose>
 									<c:when test="${objName=='ECBQuote'}">
-										<td align="center"><a href="/quotes/ecb/on/${strDate}">${strDate}</a></td>
+										<td align="center"><a href="${pageContext.request.contextPath}/ecb/on/${strDate}">${strDate}</a></td>
 									</c:when>
 									<c:otherwise>
-										<td align="center"><a href="/quotes/fed/on/${strDate}">${strDate}</a></td>
+										<td align="center"><a href="${pageContext.request.contextPath}/fed/on/${strDate}">${strDate}</a></td>
 									</c:otherwise>
 								</c:choose>
 								<td align="right"><fmt:formatNumber type="number"
