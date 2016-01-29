@@ -1,0 +1,61 @@
+html, body, .container {
+    height: 80%;
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form.form {
+	margin: 10px 0px 0px 10px;
+	background: #EEEEEE;
+	padding: 15px;
+	width: 280px; !important;
+	border: 1px solid #CCCCCC;
+	float: left;
+}
+
+input.error {
+	border: 1px solid #FF0000 !important;
+}
+
+label.error, div.error {
+	font-size: 10px; font-weight : normal;
+	color: #FF0000 !important;
+	font-weight: normal;
+}
+
+.text-normal {
+	font-weight: normal !important;
+}
+
+.errorText {
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #a94442;
+	background-color: #f2dede;
+	border-color: #ebccd1;
+}
+
+.msgText {
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #31708f;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+}
+
+#login-box {
+	width: 300px;
+	padding: 20px;
+	margin: 100px auto;
+	background: #fff;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border: 0px solid #000;
+}

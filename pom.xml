@@ -1,0 +1,81 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>tszielin.quotes</groupId>
+    <artifactId>quotes</artifactId>
+    <version>0.0.1</version>
+    <packaging>pom</packaging>
+    <name>Quotes - money exchanges</name>
+    <description>NBP, ECB and FED money exchanges</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <jetty.version>9.3.6.v20151106</jetty.version>
+        <spring.version>4.2.4.RELEASE</spring.version>
+        <spring.security.version>4.0.3.RELEASE</spring.security.version>
+        <spring.mongodb>1.8.2.RELEASE</spring.mongodb>
+        <jackson.version>2.6.0</jackson.version>
+        <junit.version>4.11</junit.version>
+        <mockito.version>1.9.5</mockito.version>
+    </properties>
+
+    <developers>
+        <developer>
+            <id>tszielin</id>
+            <name>Thomas Zielinski</name>
+            <email>tszielin@gmail.com</email>
+            <roles>
+                <role>Developer</role>
+                <role>Tester</role>
+            </roles>
+            <timezone>2</timezone>
+        </developer>
+    </developers>
+
+    <modules>
+        <module>quotes-dao</module>
+        <module>quotes-download</module>
+        <module>quotes-web</module>
+    </modules>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <!-- <debug>false</debug> -->
+                        <compilerArgument>-Xlint:all</compilerArgument>
+                        <showWarnings>true</showWarnings>
+                        <showDeprecation>true</showDeprecation>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <configuration>
+                        <warName>${parent.artifactId}-${parent.version}</warName>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.eclipse.jetty</groupId>
+                    <artifactId>jetty-maven-plugin</artifactId>
+                    <version>9.2.14.v20151106</version>
+                    <configuration>
+                        <scanIntervalSeconds>10</scanIntervalSeconds>
+                        <webApp>
+                            <contextPath>/quotes</contextPath>
+                        </webApp>
+                        <httpConnector>
+                            <port>8888</port>
+                        </httpConnector>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
