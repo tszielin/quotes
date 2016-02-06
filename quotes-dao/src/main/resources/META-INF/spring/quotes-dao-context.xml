@@ -5,6 +5,8 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 		http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo.xsd">
 
+    <context:property-placeholder location="classpath:/META-INF/spring/mongo.properties" />
+
     <mongo:db-factory id="mongoDbFactory"
         client-uri="mongodb://${username}:${password}@${host}:${port}/${database}" />
     <mongo:template id="mongoTemplate" db-factory-ref="mongoDbFactory" />
@@ -13,12 +15,5 @@
 
     <context:annotation-config />
     <context:component-scan base-package="tszielin.quotes.aggregation" />
-
-    <beans profile="mongo">
-        <context:property-placeholder location="classpath:/META-INF/spring/mongo.properties" />
-    </beans>
-    <beans profile="default">
-        <context:property-placeholder location="classpath:/META-INF/spring/heroku.properties" />
-    </beans>
 </beans>
 

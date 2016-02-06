@@ -51,10 +51,6 @@
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath:META-INF/spring/quotes-web-context.xml</param-value>
         </init-param>
-        <init-param>
-            <param-name>spring.profiles.deault</param-name>
-            <param-value>heroku</param-value>
-        </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
 
