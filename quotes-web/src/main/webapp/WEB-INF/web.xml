@@ -20,11 +20,8 @@
     <listener>
         <listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
     </listener>
-    <!-- logger
-    <listener>
-        <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
-    </listener>
-     -->
+    <!-- logger <listener> <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class> 
+        </listener> -->
 
     <session-config>
         <session-timeout>15</session-timeout>
@@ -54,13 +51,16 @@
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath:META-INF/spring/quotes-web-context.xml</param-value>
         </init-param>
+        <init-param>
+            <param-name>spring.profiles.deault</param-name>
+            <param-value>heroku</param-value>
+        </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>quotes</servlet-name>
         <url-pattern>/</url-pattern>
-    </servlet-mapping>    
+    </servlet-mapping>
     <!-- Spring MVC - END -->
-
 </web-app>
