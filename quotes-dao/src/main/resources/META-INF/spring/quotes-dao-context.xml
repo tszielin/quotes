@@ -5,8 +5,6 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 		http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo.xsd">
 
-    <context:property-placeholder location="classpath:/META-INF/spring/mongo.properties" />
-
     <mongo:db-factory id="mongoDbFactory" client-uri="${MONGOHQ_URL}" />
     <mongo:template id="mongoTemplate" db-factory-ref="mongoDbFactory" />
     <mongo:repositories base-package="tszielin.quotes.repository"
