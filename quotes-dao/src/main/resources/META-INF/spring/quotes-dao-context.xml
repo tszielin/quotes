@@ -7,8 +7,7 @@
 
     <context:property-placeholder location="classpath:/META-INF/spring/mongo.properties" />
 
-    <mongo:db-factory id="mongoDbFactory"
-        client-uri="mongodb://${username}:${password}@${host}:${port}/${database}" />
+    <mongo:db-factory id="mongoDbFactory" client-uri="${MONGOHQ_URL}" />
     <mongo:template id="mongoTemplate" db-factory-ref="mongoDbFactory" />
     <mongo:repositories base-package="tszielin.quotes.repository"
         mongo-template-ref="mongoTemplate" />
